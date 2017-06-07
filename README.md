@@ -1,6 +1,6 @@
 # LayIM.OwinMiddleware 
 
-### 对接 LayIM 实现的一个.NET后端组件。基于Owin开发,组件与WebUI解耦，无论是WebForm还是MVC都可以在 Owin Startup 中配置使用。
+#### 对接 LayIM 实现的一个.NET后端组件。基于Owin开发,组件与WebUI解耦，无论是WebForm还是MVC都可以在 Owin Startup 中配置使用。
 
 ## Quick Start
 
@@ -10,7 +10,7 @@
 
 ####  LayIM.SqlServer
 
-###### 实现了Layim的通用接口方法，用户好友列表，群组列表。
+###### 实现了Layim的通用接口方法，用户好友列表，群组列表等。
 
 ### Startup.cs 文件代码如下：
 
@@ -28,3 +28,14 @@
             });
         }
  ```
+### 或者在配置文件中配置相应的信息。
+
+```
+ <!--融云配置-->
+    <add key="RongCloud_AppKey" value="pvxdm17jpv1or"/>
+    <add key="RongCloud_AppSecret" value="Co2RwQhzkL6G8i"/>
+    
+     <connectionStrings>
+    <add name="LayIM_Connection" connectionString="****************"/>
+  </connectionStrings>
+```
