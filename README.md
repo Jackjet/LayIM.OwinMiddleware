@@ -4,7 +4,13 @@
 
 ## Quick Start
 
-### 引入 LayIM.NetClient.dll,LayIM.SqlServer.dll,Owin.dll（nuget）,Microsoft.Owin.dll(nuget)
+####  LayIM.NetClient
+
+###### 实现了路由注册，数据请求处理等公共逻辑。 通讯默认使用了融云通信。
+
+####  LayIM.SqlServer
+
+###### 实现了Layim的通用接口方法，用户好友列表，群组列表。
 
 ### Startup.cs 文件代码如下：
 
@@ -18,6 +24,7 @@
             app.UseLayimApi("/layim", new LayimOptions
             {
                 RongCloudSetting = new RongCloudSetting()
-            });
+                // RongCloudSetting = new RongCloudSetting("appKey","appSecret");
+            });
         }
  ```
