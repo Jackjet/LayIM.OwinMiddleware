@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayIM.NetClient", "LayIM.NetClient\LayIM.NetClient.csproj", "{BA0452FC-2FE3-4B03-857B-4E984C50141E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayIM.SqlServer", "LayIM.SqlServer\LayIM.SqlServer.csproj", "{0B1993F4-18AD-47F9-956C-8D5A74D7F2AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSample", "MVCSample\MVCSample.csproj", "{7D06D11D-5DA1-4B05-BFA7-92BED01DC8B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA0452FC-2FE3-4B03-857B-4E984C50141E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0452FC-2FE3-4B03-857B-4E984C50141E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0452FC-2FE3-4B03-857B-4E984C50141E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0452FC-2FE3-4B03-857B-4E984C50141E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1993F4-18AD-47F9-956C-8D5A74D7F2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1993F4-18AD-47F9-956C-8D5A74D7F2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1993F4-18AD-47F9-956C-8D5A74D7F2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1993F4-18AD-47F9-956C-8D5A74D7F2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D06D11D-5DA1-4B05-BFA7-92BED01DC8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D06D11D-5DA1-4B05-BFA7-92BED01DC8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D06D11D-5DA1-4B05-BFA7-92BED01DC8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D06D11D-5DA1-4B05-BFA7-92BED01DC8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
