@@ -39,10 +39,12 @@
   </connectionStrings>
 ```
 
-###### index配置代码：https://github.com/fanpan26/LayIM.OwinMiddleware/blob/master/MVCSample/Views/Home/Index.cshtml
+###### index.html：
+###### https://github.com/fanpan26/LayIM.OwinMiddleware/blob/master/MVCSample/Views/Home/Index.cshtml
 
-###### socket.js (通讯使用融云) https://github.com/fanpan26/LayIM.OwinMiddleware/tree/master/MVCSample/Scripts/im/rc
+###### socket.js (通讯使用融云)
+###### https://github.com/fanpan26/LayIM.OwinMiddleware/tree/master/MVCSample/Scripts/im/rc
 
 ###### LayIM 官网： http://layim.layui.com
 
-###### 欢迎大家找bug，star ★
+#### 欢迎大家找bug，star ★
