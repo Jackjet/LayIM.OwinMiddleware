@@ -2,15 +2,14 @@
 
 ###### 对接 LayIM 实现的一个.NET后端组件。基于Owin开发,组件与WebUI解耦，无论是WebForm还是MVC都可以在 Owin Startup 中配置使用。
 
-###### Quick Start
 
-######  LayIM.NetClient
+######  LayIM.NetClient 项目简介
 
-###### 实现了路由注册，数据请求处理等公共逻辑。 通讯默认使用了融云通信。
+###### 组件核心代码，中间件注册扩展方法，路由注册，数据请求处理等公共逻辑。 融云通信服务端接口对接等。
 
-######  LayIM.SqlServer
+######  LayIM.SqlServer 项目简介
 
-###### 实现了LayIM的通用接口方法，用户好友列表，群组列表等。
+###### 实现了LayIM的通用接口方法，用户好友列表，群组列表，历史纪录保存等。
 
 ###### Startup.cs 文件代码如下：
 
@@ -40,4 +39,10 @@
   </connectionStrings>
 ```
 
+###### index配置代码：https://github.com/fanpan26/LayIM.OwinMiddleware/blob/master/MVCSample/Views/Home/Index.cshtml
+
+###### socket.js (通讯使用融云) https://github.com/fanpan26/LayIM.OwinMiddleware/tree/master/MVCSample/Scripts/im/rc
+
 ###### LayIM 官网： http://layim.layui.com
+
+###### 欢迎大家找bug，star ★
