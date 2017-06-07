@@ -219,6 +219,7 @@
     <Content Include="Scripts\layui\lay\modules\tree.js" />
     <Content Include="Scripts\layui\lay\modules\upload.js" />
     <Content Include="Scripts\layui\lay\modules\util.js" />
+    <Content Include="Scripts\layui\test.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
