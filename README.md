@@ -8,7 +8,8 @@
 
 ### Startup.cs 文件代码如下：
 
- ` ``public void Configuration(IAppBuilder app)
+ ```C#
+ public void Configuration(IAppBuilder app)
         {
             //使用SQL Server
             GlobalConfiguration.Configuration.UseSqlServer("LayIM_Connection");
@@ -18,4 +19,5 @@
             {
                 RongCloudSetting = new RongCloudSetting()
             });
-        }```
+        }
+ ```
