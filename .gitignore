@@ -274,4 +274,6 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
-/LayIM.OwinMiddleware/MVCSample/Scripts/layui/
+
+ MVCSample/Scripts/layui/
+ 
