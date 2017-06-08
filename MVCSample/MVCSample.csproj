@@ -244,7 +244,11 @@
     <Content Include="Scripts\layui\font\iconfont.woff" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\ChatLog.cshtml" />
+    <None Include="Views\Home\ChatLog.cshtml">
+      <LastGenOutput>ChatLog1.generated.cs</LastGenOutput>
+      <CustomToolNamespace>LayIM.NetClient</CustomToolNamespace>
+      <Generator>RazorGenerator</Generator>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

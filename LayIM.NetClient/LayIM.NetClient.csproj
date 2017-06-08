@@ -55,6 +55,7 @@
     <Compile Include="Client\RongCloudSetting.cs" />
     <Compile Include="DefaultSerializer.cs" />
     <Compile Include="Dispatcher\CommandDispatcher.cs" />
+    <Compile Include="Dispatcher\RazorPageDispatcher.cs" />
     <Compile Include="Dispatcher\SingleParameterQueryDispatcher.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Dispatcher\ILayIMDispatcher.cs" />
@@ -66,6 +67,9 @@
     <Compile Include="LayIMOptions.cs" />
     <Compile Include="LayIMRequest.cs" />
     <Compile Include="LayIMResponse.cs" />
+    <Compile Include="Pages\ChatLog.cs" />
+    <Compile Include="Pages\ChatLog.generated.cs" />
+    <Compile Include="RazorPage.cs" />
     <Compile Include="Routes\LayimRoutes.cs" />
     <Compile Include="Owin\MiddlewareExtensions.cs" />
     <Compile Include="Owin\OwinLayIMContext.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="Storage\IStorageConnection.cs" />
     <Compile Include="Storage\LayimStorage.cs" />
     <Compile Include="Storage\LayimStorageConnection.cs" />
+    <Compile Include="UrlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
