@@ -13,6 +13,8 @@ namespace LayIM.NetClient
             Serializer = new DefaultSerializer();
         }
 
+        public string AppPath { get; set; }
+
         public RongCloudSetting RongCloudSetting { get; set; }
 
         public IJsonSerializer Serializer { get; set; }
