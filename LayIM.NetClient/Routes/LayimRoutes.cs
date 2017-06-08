@@ -52,6 +52,8 @@ namespace LayIM.NetClient
 
             //页面
             Routes.AddRazorPage("/chatlog", x => new ChatLog());
+            //历史记录局部视图
+            Routes.AddRazorPage("/history", x => new HistoryMessagePage());
         }
     }
 }

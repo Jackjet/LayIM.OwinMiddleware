@@ -251,9 +251,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Home\ChatLog.cshtml">
       <CustomToolNamespace>LayIM.NetClient</CustomToolNamespace>
-      <Generator>RazorGenerator</Generator>
       <LastGenOutput>ChatLog.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
     </None>
+    <Content Include="Views\Home\HistoryMessageView.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>HistoryMessageView.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

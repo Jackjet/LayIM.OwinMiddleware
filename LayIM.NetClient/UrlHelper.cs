@@ -21,5 +21,10 @@ namespace LayIM.NetClient
         {
             return _context.Request.PathBase + relativePath;
         }
+
+        public string HistoryMessage()
+        {
+            return To("/history");
+        }
     }
 }

@@ -62,13 +62,14 @@
     <Compile Include="Global\GlobalConfiguration.cs" />
     <Compile Include="Global\GlobalConfigurationExtensions.cs" />
     <Compile Include="Global\IGlobalConfiguration.cs" />
+    <Compile Include="HtmlHelper.cs" />
     <Compile Include="IJsonSerializer.cs" />
     <Compile Include="LayIMContext.cs" />
     <Compile Include="LayIMOptions.cs" />
     <Compile Include="LayIMRequest.cs" />
     <Compile Include="LayIMResponse.cs" />
-    <Compile Include="Pages\ChatLog.cs" />
     <Compile Include="Pages\ChatLog.generated.cs" />
+    <Compile Include="Pages\HistoryMessagePage.generated.cs" />
     <Compile Include="Pages\Model\LayimChatMessage.cs" />
     <Compile Include="RazorPage.cs" />
     <Compile Include="Routes\LayimRoutes.cs" />

@@ -9,53 +9,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASP
+namespace LayIM.NetClient
 {
     using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
-    using System.Text;
-    using System.Web;
-    using System.Web.Helpers;
-    using System.Web.Mvc;
-    using System.Web.Mvc.Ajax;
-    using System.Web.Mvc.Html;
-    using System.Web.Routing;
-    using System.Web.Security;
-    using System.Web.UI;
-    using System.Web.WebPages;
-    
-    #line 1 "..\..\Views\Home\ChatLog.cshtml"
-    using LayIM.NetClient.Pages.Model;
-    
-    #line default
-    #line hidden
-    using MVCSample;
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/ChatLog.cshtml")]
-    public partial class _Views_Home_ChatLog_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    public partial class ChatLog : RazorPage
     {
-        public _Views_Home_ChatLog_cshtml()
+        public ChatLog()
         {
         }
         public override void Execute()
         {
-            
-            #line 2 "..\..\Views\Home\ChatLog.cshtml"
-  
-    var models = new List<LayimChatMessage>()
-    {
-        new LayimChatMessage { uid=1, self=true, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" },
-        new LayimChatMessage { uid=1, self=false, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" }
-    };
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n<head>\r\n    <meta");
+WriteLiteral("<head>\r\n    <meta");
 
 WriteLiteral(" charset=\"utf-8\"");
 
@@ -71,7 +36,7 @@ WriteLiteral(" href=\"/css/layim.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" />\r\n</head>\r\n\r\n    <div");
+WriteLiteral(" />\r\n</head>\r\n    <div");
 
 WriteLiteral(" class=\"layim-chat-main\"");
 
@@ -89,146 +54,16 @@ WriteLiteral(" style=\"display:none;\"");
 
 WriteLiteral("><span>查看更多记录</span></div>\r\n");
 
-            
-            #line 21 "..\..\Views\Home\ChatLog.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 21 "..\..\Views\Home\ChatLog.cshtml"
-             foreach (var item in models)
-            {
-                if (item.self)
-                {
+WriteLiteral("            ");
+
+
+#line 11 "..\..\Views\Home\ChatLog.cshtml"
+            Write(Html.RenderPartial(new HistoryMessagePage()));
 
             
             #line default
             #line hidden
-WriteLiteral("            <li");
-
-WriteLiteral(" class=\"layim-chat-mine\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 991), Tuple.Create("\"", 1009)
-            
-            #line 27 "..\..\Views\Home\ChatLog.cshtml"
-, Tuple.Create(Tuple.Create("", 997), Tuple.Create<System.Object, System.Int32>(item.avatar
-            
-            #line default
-            #line hidden
-, 997), false)
-);
-
-WriteLiteral(" />\r\n                    <cite><i>");
-
-            
-            #line 28 "..\..\Views\Home\ChatLog.cshtml"
-                        Write(item.addtime);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</i>");
-
-            
-            #line 28 "..\..\Views\Home\ChatLog.cshtml"
-                                         Write(item.name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</cite>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 31 "..\..\Views\Home\ChatLog.cshtml"
-               Write(item.content);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </li>\r\n");
-
-            
-            #line 34 "..\..\Views\Home\ChatLog.cshtml"
-                }
-                else
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 1378), Tuple.Create("\"", 1396)
-            
-            #line 39 "..\..\Views\Home\ChatLog.cshtml"
-, Tuple.Create(Tuple.Create("", 1384), Tuple.Create<System.Object, System.Int32>(item.avatar
-            
-            #line default
-            #line hidden
-, 1384), false)
-);
-
-WriteLiteral(" />\r\n                    <cite>");
-
-            
-            #line 40 "..\..\Views\Home\ChatLog.cshtml"
-                     Write(item.name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("<i>");
-
-            
-            #line 40 "..\..\Views\Home\ChatLog.cshtml"
-                                  Write(item.addtime);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</i></cite>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 43 "..\..\Views\Home\ChatLog.cshtml"
-               Write(item.content);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </div>\r\n            </li>\r\n");
-
-            
-            #line 46 "..\..\Views\Home\ChatLog.cshtml"
-                }
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("         </ul>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("\r\n         </ul>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" id=\"LAY_page\"");
 

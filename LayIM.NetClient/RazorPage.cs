@@ -12,11 +12,16 @@ namespace LayIM.NetClient
         private readonly StringBuilder _content = new StringBuilder();
         private string _body;
 
-        protected RazorPage() { }
+        protected RazorPage() {
+
+            Html = new HtmlHelper(this);
+        }
 
         public RazorPage Layout { get; protected set; }
 
         public UrlHelper Url { get; private set; }
+
+        public HtmlHelper Html { get; set; }
 
         public LayimStorage Storage { get; internal set; }
 

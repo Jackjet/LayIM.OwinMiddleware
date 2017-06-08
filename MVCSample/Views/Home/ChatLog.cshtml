@@ -1,53 +1,16 @@
-﻿@using LayIM.NetClient.Pages.Model
-@{
-    var models = new List<LayimChatMessage>()
-    {
-        new LayimChatMessage { uid=1, self=true, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" },
-        new LayimChatMessage { uid=1, self=false, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" }
-    };
-}
-
-<head>
+﻿<head>
     <meta charset="utf-8">
     <title>聊天记录</title>
     <link href="/Scripts/layui/css/layui.css" rel="stylesheet">
     <style>body .layim-chat-main {height: auto;}</style>
     <link href="/css/layim.css" rel="stylesheet" />
 </head>
-
     <div class="layim-chat-main">
         <ul id="LAY_view">  
             <div id="chatLogMore" class="layim-chat-system" style="display:none;"><span>查看更多记录</span></div>
-            @foreach (var item in models)
-            {
-                if (item.self)
-                {
-            <li class="layim-chat-mine">
-                <div class="layim-chat-user">
-                    <img src="@item.avatar" />
-                    <cite><i>@item.addtime</i>@item.name</cite>
-                </div>
-                <div class="layim-chat-text">
-                    @item.content
-                </div>
-            </li>
-                }
-                else
-                {
-            <li>
-                <div class="layim-chat-user">
-                    <img src="@item.avatar" />
-                    <cite>@item.name<i>@item.addtime</i></cite>
-                </div>
-                <div class="layim-chat-text">
-                    @item.content
-                </div>
-            </li>
-                }
-            }
+            @Url.HistoryMessage()
          </ul>
     </div>
-
     <div id="LAY_page" style="margin: 0 10px;"></div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
