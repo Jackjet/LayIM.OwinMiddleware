@@ -13,5 +13,10 @@ namespace MVCSample.Controllers
         {
             return View();
         }
+
+        public ActionResult ChatLog()
+        {
+            return View();
+        }
     }
 }
