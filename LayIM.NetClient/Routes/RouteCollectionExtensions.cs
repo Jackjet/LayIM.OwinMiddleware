@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LayIM.NetClient
@@ -53,6 +54,21 @@ namespace LayIM.NetClient
             Error.ThrowIfNull(query, nameof(query));
 
             routes.Add(pathTemplate, new SingleParameterQueryDispatcher<T>(parameterName, query));
+        }
+
+        /// <summary>
+        /// 添加路由页面
+        /// </summary>
+        /// <param name="routes">路由集合</param>
+        /// <param name="pathTemplate">路由地址</param>
+        /// <param name="pageFunc">生成页面的方法</param>
+        public static void AddRazorPage(this RouteCollection routes, string pathTemplate, Func<Match, RazorPage> pageFunc)
+        {
+            Error.ThrowIfNull(routes, nameof(routes));
+            Error.ThrowIfNull(pathTemplate, nameof(pathTemplate));
+            Error.ThrowIfNull(pageFunc, nameof(pageFunc));
+
+            routes.Add(pathTemplate, new RazorPageDispatcher(pageFunc));
         }
 
     }
