@@ -48,6 +48,10 @@ namespace LayIM.NetClient
                 var client = new LayimUserClient(context.Storage, context.Request);
                 return client.AddMsg();
             });
+
+
+            //页面
+            Routes.AddRazorPage("/chatlog", x => new ChatLog());
         }
     }
 }
