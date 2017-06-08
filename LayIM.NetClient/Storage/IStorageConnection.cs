@@ -14,6 +14,15 @@ namespace LayIM.NetClient
     public interface IStorageConnection : IDisposable
     {
         /// <summary>
+        /// 读取历史记录
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="toId"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+
+        IEnumerable<Pages.Model.LayimChatMessage> GetHistoryMessages(long userId, long toId, string type);
+        /// <summary>
         /// 获取Layim初始化数据
         /// </summary>
         /// <param name="userId"></param>

@@ -27,8 +27,8 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 3 "..\..\Views\Home\ChatLog.cshtml"
-    using LayIM.NetClient;
+    #line 1 "..\..\Views\Home\ChatLog.cshtml"
+    using LayIM.NetClient.Pages.Model;
     
     #line default
     #line hidden
@@ -36,19 +36,26 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/ChatLog.cshtml")]
-    public partial class ChatLog : RazorPage
+    public partial class _Views_Home_ChatLog_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
+        public _Views_Home_ChatLog_cshtml()
+        {
+        }
         public override void Execute()
         {
             
-            #line 1 "..\..\Views\Home\ChatLog.cshtml"
-   Layout = null;
+            #line 2 "..\..\Views\Home\ChatLog.cshtml"
+  
+    var models = new List<LayimChatMessage>()
+    {
+        new LayimChatMessage { uid=1, self=true, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" },
+        new LayimChatMessage { uid=1, self=false, name="小盘子", content="hello", avatar="", addtime="2017-06-08 17:32" }
+    };
+
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n");
-
-WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <meta");
+WriteLiteral("\r\n\r\n<head>\r\n    <meta");
 
 WriteLiteral(" charset=\"utf-8\"");
 
@@ -64,7 +71,7 @@ WriteLiteral(" href=\"/css/layim.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" />\r\n</head>\r\n<body>\r\n\r\n    <div");
+WriteLiteral(" />\r\n</head>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"layim-chat-main\"");
 
@@ -78,7 +85,27 @@ WriteLiteral(" id=\"chatLogMore\"");
 
 WriteLiteral(" class=\"layim-chat-system\"");
 
-WriteLiteral("><span>查看更多记录</span></div>\r\n            <li");
+WriteLiteral(" style=\"display:none;\"");
+
+WriteLiteral("><span>查看更多记录</span></div>\r\n");
+
+            
+            #line 21 "..\..\Views\Home\ChatLog.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 21 "..\..\Views\Home\ChatLog.cshtml"
+             foreach (var item in models)
+            {
+                if (item.self)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <li");
 
 WriteLiteral(" class=\"layim-chat-mine\"");
 
@@ -88,388 +115,120 @@ WriteLiteral(" class=\"layim-chat-user\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 991), Tuple.Create("\"", 1009)
+            
+            #line 27 "..\..\Views\Home\ChatLog.cshtml"
+, Tuple.Create(Tuple.Create("", 997), Tuple.Create<System.Object, System.Int32>(item.avatar
+            
+            #line default
+            #line hidden
+, 997), false)
+);
 
-WriteLiteral(" />\r\n                    <cite><i>2016-12-05 08:31:22</i>纸飞机</cite>\r\n            " +
-"    </div>\r\n                <div");
+WriteLiteral(" />\r\n                    <cite><i>");
+
+            
+            #line 28 "..\..\Views\Home\ChatLog.cshtml"
+                        Write(item.addtime);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</i>");
+
+            
+            #line 28 "..\..\Views\Home\ChatLog.cshtml"
+                                         Write(item.name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</cite>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"layim-chat-text\"");
 
-WriteLiteral(">\r\n                    <img");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" alt=\"[抱抱]\"");
+WriteLiteral("                    ");
 
-WriteLiteral(" title=\"[抱抱]\"");
+            
+            #line 31 "..\..\Views\Home\ChatLog.cshtml"
+               Write(item.content);
 
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/25.gif\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </li>\r\n");
 
-WriteLiteral(" />\r\n                    <img");
+            
+            #line 34 "..\..\Views\Home\ChatLog.cshtml"
+                }
+                else
+                {
 
-WriteLiteral(" alt=\"[心]\"");
-
-WriteLiteral(" title=\"[心]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/47.gif\"");
-
-WriteLiteral(" /> 你好啊小美女\r\n                </div>\r\n            </li>\r\n            <li>\r\n        " +
-"        <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("            <li>\r\n                <div");
 
 WriteLiteral(" class=\"layim-chat-user\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 1378), Tuple.Create("\"", 1396)
+            
+            #line 39 "..\..\Views\Home\ChatLog.cshtml"
+, Tuple.Create(Tuple.Create("", 1384), Tuple.Create<System.Object, System.Int32>(item.avatar
+            
+            #line default
+            #line hidden
+, 1384), false)
+);
 
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
+WriteLiteral(" />\r\n                    <cite>");
 
-WriteLiteral(" class=\"layim-chat-text\"");
+            
+            #line 40 "..\..\Views\Home\ChatLog.cshtml"
+                     Write(item.name);
 
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
+            
+            #line default
+            #line hidden
+WriteLiteral("<i>");
 
-WriteLiteral(" alt=\"[微笑]\"");
+            
+            #line 40 "..\..\Views\Home\ChatLog.cshtml"
+                                  Write(item.addtime);
 
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("</i></cite>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"layim-chat-text\"");
 
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-            <li>
-                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
-
-WriteLiteral(" alt=\"[微笑]\"");
-
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-            <li>
-                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
-
-WriteLiteral(" alt=\"[微笑]\"");
-
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-            <li>
-                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
-
-WriteLiteral(" alt=\"[微笑]\"");
-
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-            <li>
-                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
-
-WriteLiteral(" alt=\"[微笑]\"");
-
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-            <li>
-                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:32</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你没发错吧？\r\n                    <img");
-
-WriteLiteral(" alt=\"[微笑]\"");
-
-WriteLiteral(" title=\"[微笑]\"");
-
-WriteLiteral(" src=\"http://localhost:6357/Scripts/layui/images/face/0.gif\"");
-
-WriteLiteral(" />\r\n                </div>\r\n            </li>\r\n            <li>\r\n               " +
-" <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:38</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n                    你是谁呀亲。。我爱的是贤心！我爱的是贤心！我爱的是贤心！重要的事情要说三遍~\r\n                </" +
-"div>\r\n            </li>\r\n            <li>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-user\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteLiteral(" src=\"http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8we" +
-"u.jpg\"");
-
-WriteLiteral(" />\r\n                    <cite>Z_子晴<i>2016-12-05 08:31:48</i></cite>\r\n           " +
-"     </div>\r\n                <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(@">
-                    注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
-                    <br />该模版文件所在目录（相对于layui.js）：
-                    <br />/css/modules/layim/html/chatlog.html
-                </div>
-            </li> 
-         </ul>
-    </div>
-
-    <div");
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 43 "..\..\Views\Home\ChatLog.cshtml"
+               Write(item.content);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </li>\r\n");
+
+            
+            #line 46 "..\..\Views\Home\ChatLog.cshtml"
+                }
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("         </ul>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" id=\"LAY_page\"");
 
@@ -481,7 +240,7 @@ WriteLiteral(" src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"");
 
 WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n            $(\'#chatLogMore\')." +
 "on(\'click\', function () {\r\n                console.log(\'查看更多\');\r\n            })\r" +
-"\n        })\r\n        \r\n    </script>\r\n</body>\r\n</html>\r\n");
+"\n        })\r\n        \r\n    </script>\r\n");
 
         }
     }

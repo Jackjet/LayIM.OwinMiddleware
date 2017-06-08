@@ -69,6 +69,7 @@
     <Compile Include="LayIMResponse.cs" />
     <Compile Include="Pages\ChatLog.cs" />
     <Compile Include="Pages\ChatLog.generated.cs" />
+    <Compile Include="Pages\Model\LayimChatMessage.cs" />
     <Compile Include="RazorPage.cs" />
     <Compile Include="Routes\LayimRoutes.cs" />
     <Compile Include="Owin\MiddlewareExtensions.cs" />

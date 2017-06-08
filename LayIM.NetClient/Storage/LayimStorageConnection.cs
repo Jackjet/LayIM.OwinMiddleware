@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LayIM.NetClient.Pages.Model;
 
 namespace LayIM.NetClient
 {
@@ -36,6 +37,11 @@ namespace LayIM.NetClient
         }
 
         public virtual object GetInitInfo(long userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<LayimChatMessage> GetHistoryMessages(long userId, long toId, string type)
         {
             throw new NotImplementedException();
         }
