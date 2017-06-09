@@ -46,18 +46,27 @@ namespace LayIM.NetClient
             }
         }
 
-        public bool AddMsg()
+        public async Task<bool> AddMsg()
         {
-            var dictParameters = _request.GetFormKeyValuesAsync("uid", "toid","type", "msg").Result;
+            var dictParameters = await _request.GetFormKeyValuesAsync("uid", "toid", "type", "msg");
 
-            long fUid = long.Parse(dictParameters["uid"]);
-            long tUid = long.Parse(dictParameters["toid"]);
+            long fUid = dictParameters["uid"].ToInt64();
+            long tUid = dictParameters["toid"].ToInt64();
+
             string type = dictParameters["type"];
             string msg = dictParameters["msg"];
 
             using (var connection = _storage.GetConnection())
             {
-                return connection.AddChatMsg(fUid, tUid, type, msg, DateTime.Now);
+
+                return connection.AddChatMsg(new Model.LayimChatMessageModel
+                {
+                    CreateAt = DateTime.Now,
+                    FromUserId = fUid,
+                    Message = msg,
+                    ToUserId = tUid,
+                    Type = type
+                });
             }
         }
     }
