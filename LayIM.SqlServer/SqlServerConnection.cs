@@ -91,7 +91,8 @@ SELECT b.pk_id AS id,name AS username,B.[sign],B.avatar FROM dbo.big_group_detai
 FROM    dbo.chat_msg A
         LEFT JOIN dbo.[user] B ON A.[user_id] = B.pk_id WHERE A.room_id='{CreateRoom(param.UserId, param.ToId, param.Type)}' {timestampCondition} ORDER BY A.[timestamp] desc";
 
-                var res = connection.Query<LayimChatMessageViewModel>(sql);
+                var res = connection.Query<LayimChatMessageViewModel>(sql).ToList();
+                res.ForEach(x => x.self = x.uid == param.UserId);
                 return res.OrderBy(x => x.timestamp);
             });
         }
