@@ -69,7 +69,7 @@ WriteLiteral(" class=\"layim-chat-system\"");
 
 WriteLiteral(" style=\"display:none;\"");
 
-WriteLiteral("><span>查看更多记录</span></div>\r\n         \r\n         </ul>\r\n    </div>\r\n    <div");
+WriteLiteral("><span>查看更多记录</span></div>\r\n         </ul>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" id=\"LAY_page\"");
 
@@ -86,7 +86,7 @@ WriteLiteral(" src=\"/Scripts/chatlog.js\"");
 WriteLiteral("></script>\r\n    <script>\r\n        chatLogParam.init(\'");
 
             
-            #line 18 "..\..\Views\Home\ChatLog.cshtml"
+            #line 17 "..\..\Views\Home\ChatLog.cshtml"
                       Write(Request["type"]);
 
             
@@ -95,7 +95,7 @@ WriteLiteral("></script>\r\n    <script>\r\n        chatLogParam.init(\'");
 WriteLiteral("\', \'");
 
             
-            #line 18 "..\..\Views\Home\ChatLog.cshtml"
+            #line 17 "..\..\Views\Home\ChatLog.cshtml"
                                           Write(Request["id"]);
 
             
