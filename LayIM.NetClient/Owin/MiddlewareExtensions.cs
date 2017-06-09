@@ -39,6 +39,7 @@ namespace LayIM.NetClient
                    env =>
             {
                 var owinContext = new OwinContext(env);
+
                 var context = new OwinLayimContext(storage,options, env);
 
                 var path =  owinContext.Request.Path.Value;

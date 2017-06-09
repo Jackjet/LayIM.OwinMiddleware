@@ -23,17 +23,26 @@ namespace LayIM.NetClient
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     public partial class HistoryMessagePage : RazorPage
     {
-        public HistoryMessagePage()
+
+        private void initParam()
         {
+            _param = new Model.LayimHistoryParam
+            {
+                UserId = Query("uid").ToInt64(),//当前用户ID
+                ToId = Query("id").ToInt64(),
+                Type = Query("type"),
+                Page = Query("page").ToInt32(),
+                MsgTimestamp = Query("stamp").ToInt64()
+            };
         }
         public override void Execute()
         {
 WriteLiteral("\r\n");
-
-
 #line 3 "..\..\Views\Home\HistoryMessageView.cshtml"
 
-            var models = Storage.GetConnection().GetHistoryMessages(100000, 100001, "friend");
+            initParam();
+
+            var models = Storage.GetConnection().GetHistoryMessages(_param);
             
             #line default
             #line hidden
@@ -49,9 +58,11 @@ WriteLiteral("\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        <li");
+WriteLiteral("        <li trans=\"0\" ");
 
-WriteLiteral(" class=\"layim-chat-mine\"");
+                    WriteLiteral(" class=\"layim-chat-mine\" data-timestamp=\"");
+                    Write(item.timestamp);
+                    WriteLiteral("\""); 
 
 WriteLiteral(">\r\n            <div");
 
@@ -98,10 +109,12 @@ WriteLiteral("\r\n            </div>\r\n        </li>\r\n");
     else
     {
 
-            
-            #line default
-            #line hidden
-WriteLiteral("        <li>\r\n            <div");
+
+#line default
+#line hidden
+                    WriteLiteral("        <li trans=\"0\" data-timestamp=\"");
+                    Write(item.timestamp);
+                    WriteLiteral("\">\r\n            <div");
 
 WriteLiteral(" class=\"layim-chat-user\">");
 

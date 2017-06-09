@@ -19,10 +19,15 @@ namespace MVCSample
             GlobalConfiguration.Configuration.UseSqlServer("LayIM_Connection");
 
             //使用layim api 6tnym1brnmpt7
-            app.UseLayimApi("/layim", new LayimOptions
+            var options = new LayimOptions
             {
                 RongCloudSetting = new RongCloudSetting()
-            });
+            };
+
+           // options.UseProvider(() => { return null; });
+           // options.UseSerializer(() => { return null; });
+
+            app.UseLayimApi("/layim", options);
         }
     }
 }

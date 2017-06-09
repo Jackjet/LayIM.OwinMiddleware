@@ -21,7 +21,7 @@ namespace LayIM.NetClient
         /// <param name="type"></param>
         /// <returns></returns>
 
-        IEnumerable<Pages.Model.LayimChatMessage> GetHistoryMessages(long userId, long toId, string type);
+        IEnumerable<Model.LayimChatMessageViewModel> GetHistoryMessages(Model.LayimHistoryParam param);
         /// <summary>
         /// 获取Layim初始化数据
         /// </summary>
@@ -60,7 +60,7 @@ namespace LayIM.NetClient
         /// <param name="msg">消息内容</param>
         /// <param name="createAt">发送时间</param>
         /// <returns>返回结果</returns>
-        bool AddChatMsg(long fromUserId, long toUserId, string type, string msg, DateTime createAt);
+        bool AddChatMsg(Model.LayimChatMessageModel msg);
 
     }
 }

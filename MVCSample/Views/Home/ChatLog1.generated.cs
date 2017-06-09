@@ -9,13 +9,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LayIM.NetClient
+namespace ASP
 {
     using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Text;
+    using System.Web;
+    using System.Web.Helpers;
+    using System.Web.Mvc;
+    using System.Web.Mvc.Ajax;
+    using System.Web.Mvc.Html;
+    using System.Web.Routing;
+    using System.Web.Security;
+    using System.Web.UI;
+    using System.Web.WebPages;
+    using MVCSample;
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    public partial class ChatLog : RazorPage
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/ChatLog.cshtml")]
+    public partial class _Views_Home_ChatLog_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
-        public ChatLog()
+        public _Views_Home_ChatLog_cshtml()
         {
         }
         public override void Execute()
@@ -52,18 +69,7 @@ WriteLiteral(" class=\"layim-chat-system\"");
 
 WriteLiteral(" style=\"display:none;\"");
 
-WriteLiteral("><span>查看更多记录</span></div>\r\n");
-
-WriteLiteral("            ");
-
-
-#line 11 "..\..\Views\Home\ChatLog.cshtml"
-            Write(Html.RenderPartial(new HistoryMessagePage()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n         </ul>\r\n    </div>\r\n    <div");
+WriteLiteral("><span>查看更多记录</span></div>\r\n         \r\n         </ul>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" id=\"LAY_page\"");
 
@@ -73,9 +79,29 @@ WriteLiteral("></div>\r\n    <script");
 
 WriteLiteral(" src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"");
 
-WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n            $(\'#chatLogMore\')." +
-"on(\'click\', function () {\r\n                console.log(\'查看更多\');\r\n            })\r" +
-"\n        })\r\n        \r\n    </script>\r\n");
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"/Scripts/chatlog.js\"");
+
+WriteLiteral("></script>\r\n    <script>\r\n        chatLogParam.init(\'");
+
+            
+            #line 18 "..\..\Views\Home\ChatLog.cshtml"
+                      Write(Request["type"]);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\', \'");
+
+            
+            #line 18 "..\..\Views\Home\ChatLog.cshtml"
+                                          Write(Request["id"]);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\');\r\n    </script>\r\n");
 
         }
     }

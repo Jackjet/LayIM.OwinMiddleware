@@ -1,4 +1,4 @@
-﻿@using LayIM.NetClient.Pages.Model
+﻿@*@using LayIM.NetClient.Model
 
 @{
     var models = new List<LayimChatMessage>()
@@ -11,7 +11,7 @@
             {
                 if (item.self)
                 {
-        <li class="layim-chat-mine">
+        <li class="layim-chat-mine" data-timestamp="@item.stamp">
             <div class="layim-chat-user">
                 <img src="@item.avatar" />
                 <cite><i>@item.addtime</i>@item.name</cite>
@@ -33,4 +33,4 @@
             </div>
         </li>
     }
-}
+}*@

@@ -68,9 +68,11 @@
     <Compile Include="LayIMOptions.cs" />
     <Compile Include="LayIMRequest.cs" />
     <Compile Include="LayIMResponse.cs" />
+    <Compile Include="Model\LayimChatMessageModel.cs" />
     <Compile Include="Pages\ChatLog.generated.cs" />
+    <Compile Include="Pages\HistoryMessagePage.cs" />
     <Compile Include="Pages\HistoryMessagePage.generated.cs" />
-    <Compile Include="Pages\Model\LayimChatMessage.cs" />
+    <Compile Include="Model\LayimChatMessageViewModel.cs" />
     <Compile Include="RazorPage.cs" />
     <Compile Include="Routes\LayimRoutes.cs" />
     <Compile Include="Owin\MiddlewareExtensions.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Storage\IStorageConnection.cs" />
     <Compile Include="Storage\LayimStorage.cs" />
     <Compile Include="Storage\LayimStorageConnection.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="UrlHelper.cs" />
   </ItemGroup>
   <ItemGroup>

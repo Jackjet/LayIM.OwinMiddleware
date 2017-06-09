@@ -17,6 +17,7 @@ namespace LayIM.NetClient
     {
         public ChatLog()
         {
+            
         }
         public override void Execute()
         {
@@ -50,7 +51,7 @@ WriteLiteral(" id=\"chatLogMore\"");
 
 WriteLiteral(" class=\"layim-chat-system\"");
 
-WriteLiteral(" style=\"display:none;\"");
+//WriteLiteral(" style=\"display:none;\"");
 
 WriteLiteral("><span>查看更多记录</span></div>\r\n");
 
@@ -58,7 +59,7 @@ WriteLiteral("            ");
 
 
 #line 11 "..\..\Views\Home\ChatLog.cshtml"
-            Write(Html.RenderPartial(new HistoryMessagePage()));
+            //Write(Html.RenderPartial(new HistoryMessagePage(this)));
 
 
 #line default
@@ -73,9 +74,10 @@ WriteLiteral("></div>\r\n    <script");
 
 WriteLiteral(" src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"");
 
-WriteLiteral("></script>\r\n    <script>\r\n        $(function () {\r\n            $(\'#chatLogMore\')." +
-"on(\'click\', function () {\r\n                console.log(\'查看更多\');\r\n            })\r" +
-"\n        })\r\n        \r\n    </script>\r\n");
+            WriteLiteral("></script>\r\n    <script");
+
+            WriteLiteral(" src=\"/Scripts/chatlog.min.js\" ></script>");
+            WriteLiteral($"\r\n <script> chatLogParam.init('{Query("type")}', '{Query("id")}');</script>");
 
         }
     }

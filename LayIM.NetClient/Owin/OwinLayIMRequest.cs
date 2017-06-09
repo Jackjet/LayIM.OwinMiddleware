@@ -29,6 +29,9 @@ namespace LayIM.NetClient
 
         public override string RemoteIpAddress => _context.Request.RemoteIpAddress;
 
+        public override RequestCookieCollection Cookies => _context.Request.Cookies;
+        
+
         public override async Task<IList<string>> GetFormValuesAsync(string key)
         {
             var form = await _context.ReadFormSafeAsync();

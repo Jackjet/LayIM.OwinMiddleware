@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LayIM.NetClient.Pages.Model;
+using LayIM.NetClient.Model;
 
 namespace LayIM.NetClient
 {
@@ -31,7 +31,7 @@ namespace LayIM.NetClient
             throw new NotImplementedException();
         }
 
-        public virtual bool AddChatMsg(long fromUserId, long toUserId,string type, string msg, DateTime createAt)
+        public virtual bool AddChatMsg(LayimChatMessageModel msg)
         {
             throw new NotImplementedException();
         }
@@ -41,7 +41,7 @@ namespace LayIM.NetClient
             throw new NotImplementedException();
         }
 
-        public IEnumerable<LayimChatMessage> GetHistoryMessages(long userId, long toId, string type)
+        public virtual IEnumerable<LayimChatMessageViewModel> GetHistoryMessages(LayimHistoryParam param)
         {
             throw new NotImplementedException();
         }

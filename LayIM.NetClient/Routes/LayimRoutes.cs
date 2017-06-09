@@ -46,11 +46,10 @@ namespace LayIM.NetClient
             Routes.AddCommand("/chat", context =>
             {
                 var client = new LayimUserClient(context.Storage, context.Request);
-                return client.AddMsg();
+                return client.AddMsg().Result;
             });
 
-
-            //页面
+            //聊天历史记录页面
             Routes.AddRazorPage("/chatlog", x => new ChatLog());
             //历史记录局部视图
             Routes.AddRazorPage("/history", x => new HistoryMessagePage());

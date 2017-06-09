@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LayIM.NetClient.Model;
 
 namespace LayIM.SqlServer
 {
@@ -75,20 +76,48 @@ SELECT b.pk_id AS id,name AS username,B.[sign],B.avatar FROM dbo.big_group_detai
             });
         }
 
-        public override bool AddChatMsg(long fromUserId, long toUserId,string type, string msg, DateTime createAt)
+        public override IEnumerable<LayimChatMessageViewModel> GetHistoryMessages(LayimHistoryParam param)
         {
-            if (fromUserId == 0 || toUserId == 0) { return false; }
+            return _storage.UseConnection<IEnumerable<LayimChatMessageViewModel>>(connection =>
+            {
+                string timestampCondition = param.MsgTimestamp > 0 ? "AND A.[timestamp]<" + param.MsgTimestamp : "";
+
+                var sql = $@"SELECT TOP {param.Page}  A.[user_id] AS [uid] ,
+        A.msg AS content ,
+        A.create_at AS addtime ,
+        A.[timestamp] ,
+        B.name ,
+        B.avatar
+FROM    dbo.chat_msg A
+        LEFT JOIN dbo.[user] B ON A.[user_id] = B.pk_id WHERE A.room_id='{CreateRoom(param.UserId, param.ToId, param.Type)}' {timestampCondition} ORDER BY A.[timestamp] desc";
+
+                var res = connection.Query<LayimChatMessageViewModel>(sql);
+                return res.OrderBy(x => x.timestamp);
+            });
+        }
+
+        /// <summary>
+        /// 添加聊天消息记录
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public override bool AddChatMsg(LayimChatMessageModel msg)
+        {
+            if (msg==null||msg.FromUserId == 0 || msg.ToUserId == 0) { return false; }
 
             return _storage.UseConnection<bool>(connection =>
             {
-                string sql = @"INSERT INTO dbo.chat_msg( pk_id , user_id ,room_id ,msg ,create_at ) VALUES  ( @msgid , @uid ,  @roomid ,@msg , @create)";
+                string sql = @"INSERT INTO dbo.chat_msg( pk_id , user_id ,room_id ,msg ,create_at,timestamp ) VALUES  ( @msgid , @uid ,  @roomid ,@msg , @create,@timestamp)";
 
-                var result = connection.Execute(sql, 
-                    new {
+                var result = connection.Execute(sql,
+                    new
+                    {
                         msgid = Guid.NewGuid().ToString(),
-                        uid = fromUserId,
-                        roomid = CreateRoom(fromUserId, toUserId, type),
-                        msg = msg, create = createAt
+                        uid = msg.FromUserId,
+                        roomid = CreateRoom(msg.FromUserId, msg.ToUserId, msg.Type),
+                        msg = msg.Message,
+                        create = msg.CreateAt,
+                        timestamp = msg.TimeStamp
                     });
                 return result > 0;
             });
@@ -111,7 +140,6 @@ SELECT b.pk_id AS id,name AS username,B.[sign],B.avatar FROM dbo.big_group_detai
             }
 
             return "";
-
         }
     }
 }

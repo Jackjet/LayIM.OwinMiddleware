@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,10 @@ namespace LayIM.NetClient
         public abstract string LocalIpAddress { get; }
         public abstract string RemoteIpAddress { get; }
 
+        public abstract RequestCookieCollection Cookies { get; }
+
         public abstract string GetQuery(string key);
+
         public abstract Task<IList<string>> GetFormValuesAsync(string key);
 
         /// <summary>
