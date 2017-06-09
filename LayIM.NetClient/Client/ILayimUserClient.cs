@@ -28,7 +28,7 @@ namespace LayIM.NetClient
         /// 添加消息记录
         /// </summary>
         /// <returns></returns>
-        bool AddMsg();
+        Task<bool> AddMsg();
     }
 
 }
