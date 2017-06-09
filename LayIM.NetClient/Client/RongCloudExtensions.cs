@@ -23,7 +23,7 @@ namespace LayIM.NetClient
             int rd_i = random.Next();
 
             string nonce = rd_i.ToString();
-            string timestamp = Convert.ToString(DateTimeTostamp(DateTime.Now));
+            string timestamp = Convert.ToString(DateTime.Now.ToTimestamp());
             string signature = GetHash(appSecret + nonce + timestamp).ToLowerInvariant();
             //appkey
             request.AddHeader("App-Key",appKey);
@@ -34,18 +34,6 @@ namespace LayIM.NetClient
             //根据字符串获取的签名
             request.AddHeader("Signature", signature);
         }
-
-        /// <summary>
-        /// 获取时间戳
-        /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
-        private static long DateTimeTostamp(DateTime dt)
-        {
-            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
-            return (long)(dt - startTime).TotalSeconds;
-        }
-
         /// <summary>
         /// 将字符串进行sha1加密
         /// </summary>
