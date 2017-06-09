@@ -21,63 +21,22 @@ namespace LayIM.NetClient
         }
         public override void Execute()
         {
-WriteLiteral("<head>\r\n    <meta");
 
-WriteLiteral(" charset=\"utf-8\"");
+            WriteLiteral("<head>\r\n");
+            WriteLiteral("<meta charset=\"utf-8\">\r\n");
+            WriteLiteral("<title>聊天记录</title>\r\n");
+            WriteLiteral("<link href=\"/Scripts/layui/css/layui.css\" rel=\"stylesheet\">\r\n");
+            WriteLiteral("<style>body .layim-chat-main {height: auto;}</style>\r\n");
+            WriteLiteral("<link href=\"/css/layim.css\" rel=\"stylesheet\" />\r\n");
+            WriteLiteral("</head>\r\n");
 
-WriteLiteral(">\r\n    <title>聊天记录</title>\r\n    <link");
+            WriteLiteral("<div class=\"layim-chat-main\">\r\n");
+            WriteLiteral("<ul id=\"LAY_view\"><div id=\"chatLogMore\" class=\"layim-chat-system\"><span>查看更多记录</span></div> </ul>\r\n");
+            WriteLiteral("</div>\r\n");
 
-WriteLiteral(" href=\"/Scripts/layui/css/layui.css\"");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(">\r\n    <style>body .layim-chat-main {height: auto;}</style>\r\n    <link");
-
-WriteLiteral(" href=\"/css/layim.css\"");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" />\r\n</head>\r\n    <div");
-
-WriteLiteral(" class=\"layim-chat-main\"");
-
-WriteLiteral(">\r\n        <ul");
-
-WriteLiteral(" id=\"LAY_view\"");
-
-WriteLiteral(">  \r\n            <div");
-
-WriteLiteral(" id=\"chatLogMore\"");
-
-WriteLiteral(" class=\"layim-chat-system\"");
-
-//WriteLiteral(" style=\"display:none;\"");
-
-WriteLiteral("><span>查看更多记录</span></div>\r\n");
-
-WriteLiteral("            ");
-
-
-#line 11 "..\..\Views\Home\ChatLog.cshtml"
-            //Write(Html.RenderPartial(new HistoryMessagePage(this)));
-
-
-#line default
-#line hidden
-            WriteLiteral("\r\n         </ul>\r\n    </div>\r\n    <div");
-
-WriteLiteral(" id=\"LAY_page\"");
-
-WriteLiteral(" style=\"margin: 0 10px;\"");
-
-WriteLiteral("></div>\r\n    <script");
-
-WriteLiteral(" src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"");
-
-            WriteLiteral("></script>\r\n    <script");
-
-            WriteLiteral(" src=\"/Scripts/chatlog.min.js\" ></script>");
-            WriteLiteral($"\r\n <script> chatLogParam.init('{Query("type")}', '{Query("id")}');</script>");
+            WriteLiteral("<script src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"></script>\r\n");
+            WriteLiteral("<script src=\"/Scripts/chatlog.min.js\"></script>\r\n");
+            WriteLiteral($"<script>chatLogParam.init('{Query("type")}', '{Query("id")}');</script>\r\n");
 
         }
     }

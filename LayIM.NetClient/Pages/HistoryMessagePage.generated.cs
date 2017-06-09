@@ -23,7 +23,9 @@ namespace LayIM.NetClient
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     public partial class HistoryMessagePage : RazorPage
     {
-
+        /// <summary>
+        /// 初始化参数
+        /// </summary>
         private void initParam()
         {
             _param = new Model.LayimHistoryParam
@@ -37,131 +39,30 @@ namespace LayIM.NetClient
         }
         public override void Execute()
         {
-WriteLiteral("\r\n");
-#line 3 "..\..\Views\Home\HistoryMessageView.cshtml"
-
+            //先给参数赋值
             initParam();
-
+            //获取model列表
             var models = Storage.GetConnection().GetHistoryMessages(_param);
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 10 "..\..\Views\Home\HistoryMessageView.cshtml"
- foreach (var item in models)
+            string classUser = "layim-chat-user";
+            string classMine = "layim-chat-mine";
+            foreach (var item in models)
             {
+                WriteLiteral($"<li trans=\"0\" class=\"{(item.self ? classMine : classUser) }\" data-timestamp=\"{item.timestamp}\">\r\n");
+                WriteLiteral("<div class=\"layim-chat-user\">\r\n");
+                WriteLiteral($"<img src=\"{item.avatar}\" />\r\n");
                 if (item.self)
                 {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        <li trans=\"0\" ");
-
-                    WriteLiteral(" class=\"layim-chat-mine\" data-timestamp=\"");
-                    Write(item.timestamp);
-                    WriteLiteral("\""); 
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"layim-chat-user\">");
-
-WriteLiteral(" <img src = \"" + item.avatar + "\" />");
-
-WriteLiteral("<cite><i>");
-
-            
-            #line 17 "..\..\Views\Home\HistoryMessageView.cshtml"
-                    Write(item.addtime);
-            #line default
-            #line hidden
-WriteLiteral("</i>");
-
-            
-            #line 17 "..\..\Views\Home\HistoryMessageView.cshtml"
-                                     Write(item.name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</cite>\r\n            </div>\r\n            <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 20 "..\..\Views\Home\HistoryMessageView.cshtml"
-           Write(item.content);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </li>\r\n");
-
-            
-            #line 23 "..\..\Views\Home\HistoryMessageView.cshtml"
-    }
-    else
-    {
-
-
-#line default
-#line hidden
-                    WriteLiteral("        <li trans=\"0\" data-timestamp=\"");
-                    Write(item.timestamp);
-                    WriteLiteral("\">\r\n            <div");
-
-WriteLiteral(" class=\"layim-chat-user\">");
-
-                    WriteLiteral(" <img src = \"" + item.avatar + "\" />");
-
-                    WriteLiteral("<cite>");
-
-            
-            #line 29 "..\..\Views\Home\HistoryMessageView.cshtml"
-                 Write(item.name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("<i>");
-
-            
-            #line 29 "..\..\Views\Home\HistoryMessageView.cshtml"
-                              Write(item.addtime);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</i></cite>\r\n            </div>\r\n            <div");
-
-WriteLiteral(" class=\"layim-chat-text\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 32 "..\..\Views\Home\HistoryMessageView.cshtml"
-           Write(item.content);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </div>\r\n        </li>\r\n");
-
-            
-            #line 35 "..\..\Views\Home\HistoryMessageView.cshtml"
-    }
-}
-            
-            #line default
-            #line hidden
+                    WriteLiteral($"<cite><i>{item.addtime}</i>{item.name}</cite>\r\n");
+                }
+                else {
+                    WriteLiteral($"<cite><i>{item.name}</i>{item.addtime}</cite>\r\n");
+                }
+                WriteLiteral("</div>\r\n");
+                WriteLiteral("<div class=\"layim-chat-text\">\r\n");
+                WriteLiteral($"{item.content}");
+                WriteLiteral("</div>\r\n");
+                WriteLiteral("</li>\r\n");
+            }
         }
     }
 }
