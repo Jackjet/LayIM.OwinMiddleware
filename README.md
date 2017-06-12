@@ -20,11 +20,7 @@
             GlobalConfiguration.Configuration.UseSqlServer("LayIM_Connection");
 
             //使用layim api 
-            app.UseLayimApi("/layim", new LayimOptions
-            {
-                RongCloudSetting = new RongCloudSetting()
-                // RongCloudSetting = new RongCloudSetting("appKey","appSecret");
-            });
+            app.UseLayimApi();
         }
  ```
 ###### 或者在配置文件中配置相应的信息。
