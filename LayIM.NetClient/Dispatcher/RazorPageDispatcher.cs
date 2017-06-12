@@ -23,6 +23,7 @@ namespace LayIM.NetClient
         /// <returns></returns>
         public Task Dispatch(LayimContext context)
         {
+           
             context.Response.ContentType = "text/html";
             //根据路径匹配到相应的页面
             var page = _pageFunc(context.UriMatch);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace LayIM.NetClient
 {
@@ -30,7 +31,9 @@ namespace LayIM.NetClient
         public override string RemoteIpAddress => _context.Request.RemoteIpAddress;
 
         public override RequestCookieCollection Cookies => _context.Request.Cookies;
-        
+
+        public override Stream Body => _context.Request.Body;
+
 
         public override async Task<IList<string>> GetFormValuesAsync(string key)
         {

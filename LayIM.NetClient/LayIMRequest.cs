@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace LayIM.NetClient
         public abstract string RemoteIpAddress { get; }
 
         public abstract RequestCookieCollection Cookies { get; }
+
+        public abstract Stream Body { get; }
 
         public abstract string GetQuery(string key);
 
