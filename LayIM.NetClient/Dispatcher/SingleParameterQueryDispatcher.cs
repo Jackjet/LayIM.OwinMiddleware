@@ -36,7 +36,15 @@ namespace LayIM.NetClient
             //返回结果为"application/json";
             context.Response.ContentType = "application/json";
             //将参数转化为相应的类型，有 null 异常
-            T value = (T)Convert.ChangeType(parameterValue, typeof(T));
+            T value;
+            if (string.IsNullOrEmpty(parameterValue))
+            {
+                value = default(T);
+            }
+            else
+            {
+                value = (T)Convert.ChangeType(parameterValue, typeof(T));
+            }
             //执行具体处理函数
             var result = _command(context, value);
             //序列化结果
