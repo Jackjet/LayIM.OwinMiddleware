@@ -28,14 +28,7 @@ namespace LayIM.NetClient
         public RongCloudSetting()
         {
             _appKey = ConfigurationManager.AppSettings["RongCloud_AppKey"]?.ToString();
-            _appSecret = ConfigurationManager.AppSettings["RongCloud_AppSecret"]?.ToString(); ;
-
-            if (string.IsNullOrEmpty(_appKey)) {
-                throw new ArgumentException("配置文件中不存在：RongCloud_AppKey");
-            }
-            if (string.IsNullOrEmpty(_appSecret)) {
-                throw new ArgumentException("配置文件中不存在：RongCloud_AppSecret");
-            }
+            _appSecret = ConfigurationManager.AppSettings["RongCloud_AppSecret"]?.ToString(); 
         }
 
         public string AppKey => _appKey;

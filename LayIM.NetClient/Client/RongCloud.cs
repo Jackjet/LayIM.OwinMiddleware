@@ -48,7 +48,9 @@ namespace LayIM.NetClient
         public RongCloud(RongCloudSetting setting)
         {
             Error.ThrowIfNull(setting, nameof(setting));
-
+            if (string.IsNullOrEmpty(setting.AppKey) || string.IsNullOrEmpty(setting.AppSecret)) {
+                throw new ArgumentException("RongCloud_AppKey 或 RongCloud_AppSecret 未配置");
+            }
             _setting = setting;
         }
 

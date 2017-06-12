@@ -11,11 +11,26 @@ namespace LayIM.NetClient
         public LayimOptions()
         {
             Serializer = new DefaultSerializer();
+            UseRongCloud = true;
         }
 
         public string AppPath { get; set; }
 
-        public RongCloudSetting RongCloudSetting { get; set; }
+        private bool _useRongCloud = true;
+        public bool UseRongCloud
+        {
+            get { return _useRongCloud; }
+            set
+            {
+                if (value)
+                {
+                    RongCloudSetting = new RongCloudSetting();
+                }
+                _useRongCloud = value;
+            }
+        }
+
+        public RongCloudSetting RongCloudSetting { get; internal set; }
 
         internal IJsonSerializer Serializer { get; set; }
 
