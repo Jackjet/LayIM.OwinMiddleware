@@ -23,7 +23,6 @@ namespace LayIM.NetClient
 
         public async Task Dispatch(LayimContext context)
         {
-            var body = context.Request.Body;
             var request = context.Request;
             var response = context.Response;
 

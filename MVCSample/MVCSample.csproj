@@ -272,7 +272,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="upload\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LayIM.NetClient\LayIM.NetClient.csproj">
       <Project>{ba0452fc-2fe3-4b03-857b-4e984c50141e}</Project>
