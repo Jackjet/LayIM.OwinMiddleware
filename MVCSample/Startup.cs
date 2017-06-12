@@ -24,9 +24,6 @@ namespace MVCSample
                 RongCloudSetting = new RongCloudSetting()
             };
 
-           // options.UseProvider(() => { return null; });
-           // options.UseSerializer(() => { return null; });
-
             app.UseLayimApi("/layim", options);
         }
     }
