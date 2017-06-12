@@ -32,6 +32,10 @@ namespace LayIM.NetClient
 
         public override RequestCookieCollection Cookies => _context.Request.Cookies;
 
+        public override IReadableStringCollection Query => _context.Request.Query;
+
+        public override IHeaderDictionary Header => _context.Request.Headers;
+
         public override Stream Body => _context.Request.Body;
 
 

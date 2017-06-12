@@ -57,7 +57,6 @@
     <Compile Include="Dispatcher\CommandDispatcher.cs" />
     <Compile Include="Dispatcher\RazorPageDispatcher.cs" />
     <Compile Include="Dispatcher\SingleParameterQueryDispatcher.cs" />
-    <Compile Include="Dispatcher\UploadDispatcher.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Dispatcher\ILayIMDispatcher.cs" />
     <Compile Include="Global\GlobalConfiguration.cs" />

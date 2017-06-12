@@ -22,6 +22,10 @@ namespace LayIM.NetClient
 
         public abstract RequestCookieCollection Cookies { get; }
 
+        public abstract IReadableStringCollection Query { get; }
+
+        public abstract IHeaderDictionary Header { get; }
+
         public abstract Stream Body { get; }
 
         public abstract string GetQuery(string key);
