@@ -28,7 +28,7 @@
 ```
  <!--融云配置-->
     <add key="RongCloud_AppKey" value="pvxdm17jpv1or"/>
-    <add key="RongCloud_AppSecret" value="Co2RwQhzkL6G8i"/>
+    <add key="RongCloud_AppSecret" value="*******"/>
     
      <connectionStrings>
     <add name="LayIM_Connection" connectionString="****************"/>
