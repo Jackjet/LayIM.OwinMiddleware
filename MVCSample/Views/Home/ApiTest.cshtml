@@ -32,14 +32,14 @@
             <td><button class="layui-btn layui-btn-primary layui-btn-small" api-event="groupadd">试一试</button></td>
         </tr>
         <tr>
-            <td>注册用户</td>
+            <td>添加用户</td>
             <td>/{layim}/user/add</td>
             <td>POST</td>
-            <td>用户昵称（nickname）<br/>用户头像（avatar）<br/>签名(sign)</td>
+            <td>用户昵称（name）<br/>用户头像（avatar）<br/>签名(sign)</td>
             <td><button class="layui-btn layui-btn-primary layui-btn-small" api-event="useradd">试一试</button></td>
         </tr>
         <tr>
-            <td>申请加好友</td>
+            <td>申请好友</td>
             <td>/{layim}/friend/apply</td>
             <td>POST</td>
             <td>申请人ID(uid)<br/>被申请人ID(tid)<br/>备注(other)</td>
@@ -60,7 +60,7 @@
             <td><button class="layui-btn layui-btn-primary layui-btn-small" api-event="friendsearch">试一试</button></td>
         </tr>
         <tr>
-            <td>群查找</td>
+            <td>群组查找</td>
             <td>/{layim}/group/search</td>
             <td>GET</td>
             <td>起始序号(start)<br/>条数(num)<br/>关键词.目前只支持群名(key)<br/>排序按照添加时间正序</td>
@@ -71,6 +71,7 @@
 
 <script src="~/Scripts/layui/layui.js"></script>
     <script>
+        var prefix = "/layim";
         layui.use(['jquery', 'layer'], function ($, l) {
             var layer = l;
             $(function () {
@@ -81,24 +82,43 @@
             });
         });
 
-        var api = {
-            useradd: {},
-            groupadd: {},
-            friendapply: {},
-            groupapply: {},
-            friendsearch: {},
-            groupsearch: {}
-        };
+        var api = [
+            { name: '添加群组',func:'groupadd', url: '/group/add', params: ['uid', 'name', 'desc','avatar'], type: 'POST' },
+            { name: '添加用户',func:'useradd', url: '/user/add', params: ['name', 'avatar', 'sign'], type: 'POST' },
+            { name: '申请好友',func:'friendapply', url: '/friend/apply', params: ['uid', 'tid', 'other'], type: 'POST' },
+            { name: '申请加群',func:'groupapply', url: '/group/apply', params: ['uid', 'tid', 'other'], type: 'POST' },
+            { name: '好友查找',func:'friendsearch', url: '/friend/search', params: ['start', 'num', 'key'], type: 'GET' },
+            { name: '群组查找',func:'groupsearch', url: '/group/search', params: ['start', 'num', 'key'], type: 'GET' }
+        ];
 
         var test = {
             request: function (o) {
-                console.log(o);
-                var html = '<div><input type="text" placeholder="请输入标题" class="layui-input" style="margin:2px;"><input type="text" placeholder="请输入标题" class="layui-input"></div>';
+                var detail = api.filter(function (item) {
+                    return item.func == o
+                })[0];
+
+                var html = (function(){
+                    var t = '<div>';
+                    for (var i = 0; i < detail.params.length; i++) {
+                        t += '<input type="text" placeholder="' + detail.params[i] + '" class="layui-input" style="margin:2px;">'
+                    }
+                    t += '</div>';
+                    return t;
+                })();
+                var url = prefix + detail.url;
+                var d = {};
                 layer.confirm(html, {
-                    title: '{好友申请}'
+                    title: detail.name
                , shade: [0.8, '#393D49'],
                     yes: function (index) {
-                        alert(1);
+                        $.ajax({
+                            url: url,
+                            type: detail.type,
+                            data: d,
+                            success: function (res) {
+                                console.log(res);
+                            }
+                        });
                     }
                 });
             }
