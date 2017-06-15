@@ -256,6 +256,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\chatlog.min.js" />
+    <Content Include="Views\Home\ApiTest.cshtml" />
     <None Include="Views\Home\ChatLog.cshtml">
       <CustomToolNamespace>LayIM.NetClient</CustomToolNamespace>
       <LastGenOutput>ChatLog1.generated.cs</LastGenOutput>

@@ -18,5 +18,10 @@ namespace MVCSample.Controllers
         {
             return View();
         }
+
+        public ActionResult ApiTest()
+        {
+            return View();
+        }
     }
 }
